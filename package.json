@@ -1,6 +1,7 @@
 {
   "packageManager": "yarn@4.9.2",
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
     "mini-css-extract-plugin": "^2.9.2",
