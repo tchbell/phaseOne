@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "breakpoints" as bp;
+
+$grid-columns: 12;
+$gutter: 1rem;
+
+// Container
+.container {
+    width: 100%;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    @each $breakpoint, $max-width in bp.$container-max-widths {
+        @include bp.respond-above($breakpoint) {
+            max-width: $max-width;
+        }
+    }
+}
+
+// Row
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+}
+
+// Default column (auto width)
+.col {
+    flex: 1 0 0%;
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
+
+// Fixed-width columns
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        flex: 0 0 auto;
+        width: math.div(100%, $grid-columns) * $i;
+        padding-left: $gutter;
+        padding-right: $gutter;
+        box-sizing: border-box;
+    }
+}
+
+// Responsive columns (e.g., .col-md-6)
+@each $breakpoint, $min in bp.$breakpoints {
+    @include bp.respond-above($breakpoint) {
+        @for $i from 1 through $grid-columns {
+            .col-#{$breakpoint}-#{$i} {
+                flex: 0 0 auto;
+                width: math.div(100%, $grid-columns) * $i;
+                padding-left: $gutter;
+                padding-right: $gutter;
+            }
+        }
+    }
+}

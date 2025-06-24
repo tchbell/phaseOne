@@ -1,0 +1,10 @@
+@use "breakpoints";
+@use "grid";
+@use "header";
+@use "hero";
+@use "cards";
+$main-color: #333666;
+
+body {
+    background-color: #fff;
+}

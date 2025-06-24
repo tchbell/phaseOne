@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topic One</title>
+  </head>
+  <body>
+    <header class="header">
+      <div
+        class="header__hamburger nav-toggle"
+        aria-controls="main-menu"
+        aria-expanded="false"
+      ></div>
+      <div class="header__logo"></div>
+      <nav class="nav" id="main-menu">
+        <button
+          class="nav__close nav-toggle"
+          aria-label="Close navigation"
+        ></button>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#">Link Two</a></li>
+          <li><a href="#">Link Three</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero"></section>
+
+    <main>
+      <div class="container">
+        <h1>Topic One</h1>
+        <div class="row" id="weather-row"></div>
+      </div>
+    </main>
+    <script defer src="../dist/js/weather.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+@use "sass:map";
+
+// 1. Define Bootstrap-style breakpoints
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+// Container max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// 2. Mixin for min-width media queries
+@mixin respond-above($breakpoint) {
+    $value: map.get($breakpoints, $breakpoint);
+
+    @if $value !=null {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "No value found for '#{$breakpoint}' in $breakpoints map.";
+    }
+}
+
+// 3. Optional: Mixin for max-width media queries
+@mixin respond-below($breakpoint) {
+    $value: map.get($breakpoints, $breakpoint);
+
+    @if $value !=null {
+        @media (max-width: ($value - 0.02px)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "No value found for '#{$breakpoint}' in $breakpoints map.";
+    }
+}
