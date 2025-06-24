@@ -1,8 +1,17 @@
 # Node modules
 node_modules/
 
-# Yarn lock file (optional if you use npm)
-yarn.lock
+# Yarn v4 (Berry)
+.pnp.*
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/patches/
+.yarn/plugins/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
 
 # Build output
 dist/
@@ -14,19 +23,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# OS / Editor junk
+# Editor/OS junk
 .DS_Store
 Thumbs.db
 
 # Sass cache
 .sass-cache/
 
-# VS Code settings (optional, team preference)
+# VS Code settings (optional/team preference)
 .vscode/
 
 # Environment files
 .env
 .env.*
-
-# Cache
 .cache/
